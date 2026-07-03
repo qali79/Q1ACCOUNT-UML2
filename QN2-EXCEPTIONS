@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package vu.mysterytest.java;
+
+public class RiskyTest {
+
+    static int risky(int x) {
+        try {
+            if (x == 0)
+                throw new ArithmeticException();
+
+            return 10 / x;
+
+        } catch (ArithmeticException e) {
+            System.out.println("caught");
+            return -1;
+
+        } finally {
+            System.out.println("done");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Call risky(0):");
+        System.out.println("Returned: " + risky(0));
+
+        System.out.println();
+
+        System.out.println("Call risky(2):");
+        System.out.println("Returned: " + risky(2));
+    }
+}
